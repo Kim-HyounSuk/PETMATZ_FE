@@ -28,7 +28,8 @@ export default function Intro() {
 
     const handleKakaoLogin = () => {
         // 백엔드 카카오 로그인 링크로 리다이렉트
-        window.location.href = `${import.meta.env.VITE_SERVER_URL}/oauth2/authorization/kakao`;
+        const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${import.meta.env.VITE_KAKAO_REST_API_KEY}&redirect_uri=${import.meta.env.VITE_SERVER_URL}/oauth2/callback/kakao&response_type=code`;
+        window.location.href = KAKAO_AUTH_URL;
     };
 
     return (
